@@ -1,0 +1,324 @@
+html, body { 
+	background: rgb(184,200,224); 
+	position: fixed; 
+	font-family: "Arial Black"; 
+	width: 100%; 
+	height: 100%; 
+	min-width: 100%; 
+	min-height: 100%; 
+	max-width: 100%; 
+	max-height: 100%; 
+	margin:0; 
+	padding:0; 
+	overflow: hidden; 
+	text-align: center; 
+	cursor: pointer; 
+	overflow: hidden !important;
+	-ms-touch-action: manipulation;	/* IE10  */
+	touch-action: manipulation;		/* IE11+ */ }
+			
+			canvas {
+			       background-image:url(images/background.png);
+				   background-repeat:no-repeat; 
+				   background-size:cover;
+
+				   filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.images/background.png',sizingMethod='scale');
+				   -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/background.png',sizingMethod='scale')";
+				}
+
+				button { 
+					outline: none; 
+				}
+				#wrapper{
+					overflow:hidden;
+				}
+			#jump { 
+				width: 100%; 
+				height: 100%; 
+				z-index: 500; 
+				position: absolute; 
+				top: 0; 
+				left: 0; 
+				opacity: 0;
+				-webkit-tap-highlight-color: rgba(0,0,0,0); 
+			} 
+			#control{
+				z-index: 501;
+				text-align: right;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+			#pauseButton {
+				width: 48px;
+				height: 48px;
+				margin: 10px;
+				background: rgba(0,0,0,0);
+				border: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				outline: none;
+
+			}
+			#menu{
+				z-index:502;
+				background: url(images/dojo.jpg) no-repeat;
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				/* Firefox */
+			    display:-moz-box;
+			    -moz-box-pack:center;
+			    -moz-box-align:center;
+
+			    /* Safari and Chrome */
+			    display:-webkit-box;
+			    -webkit-box-pack:center;
+			    -webkit-box-align:center;
+
+			    /* W3C */
+			    display:box;
+			    box-pack:center;
+			    box-align:center;
+			}
+			#menu #group {
+				display: table;
+				margin: 0 auto;
+			}
+			#menu button {
+				width: 200px; 
+				height: 50px;
+				display: block;
+				margin: 0 auto;
+				margin-top: 10px;
+				background: url(images/button.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				color: #fff;
+				font-weight: 800;
+			}
+
+			#modal{
+				visibility: visible;
+				position: absolute;
+				top: -5000px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				/* Firefox */
+			    display:-moz-box;
+			    -moz-box-pack:center;
+			    -moz-box-align:center;
+
+			    /* Safari and Chrome */
+			    display:-webkit-box;
+			    -webkit-box-pack:center;
+			    -webkit-box-align:center;
+
+			    /* W3C */
+			    display:box;
+			    box-pack:center;
+			    box-align:center;
+				z-index: 503;
+				background: url(images/alert.png);
+				width: 400px;
+				height: 200px;
+				color: white;
+			}
+			#modal #content {
+				width: 250px;
+				height: 100px;
+				position: absolute;
+				top:0; bottom:0; left:0; right:0;
+				margin: auto;
+				color: #fff;
+				font-weight: 800;
+				text-transform: uppercase;
+				display: block;
+				z-index: 503;
+			}
+			#modal button {
+
+				width: 100px; 
+				height: 30px;
+				display: block;
+				margin: 0 auto;
+				margin-top: 10px;
+				background: url(images/button.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				color: #fff;
+				font-weight: 800;
+				z-index: 1000;
+			
+			}
+
+
+
+
+
+
+#pause{
+				visibility: visible;
+				position: absolute;
+				top: -5000px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				/* Firefox */
+			    display:-moz-box;
+			    -moz-box-pack:center;
+			    -moz-box-align:center;
+
+			    /* Safari and Chrome */
+			    display:-webkit-box;
+			    -webkit-box-pack:center;
+			    -webkit-box-align:center;
+
+			    /* W3C */
+			    display:box;
+			    box-pack:center;
+			    box-align:center;
+				z-index: 503;
+				background: url(images/alert.png);
+				width: 400px;
+				height: 200px;
+				color: white;
+			}
+			#pause #content {
+				width: 250px;
+				height: 100px;
+				position: absolute;
+				top:0; bottom:0; left:0; right:0;
+				margin: auto;
+				color: #fff;
+				font-weight: 800;
+				text-transform: uppercase;
+				display: block;
+				z-index: 503;
+			}
+			#pause button {
+
+				width: 100px; 
+				height: 30px;
+				display: block;
+				margin: 0 auto;
+				margin-top: 10px;
+				background: url(images/button.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				color: #fff;
+				font-weight: 800;
+				z-index: 1000;
+			
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+			#highscores {
+				visibility: visible;
+				position: absolute;
+				top: -5000px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				width: 480px; 
+				height: 270px;
+				border-radius: 50px;
+				background: #fff;
+				/* Firefox */
+			    display:-moz-box;
+			    -moz-box-pack:center;
+			    -moz-box-align:center;
+
+			    /* Safari and Chrome */
+			    display:-webkit-box;
+			    -webkit-box-pack:center;
+			    -webkit-box-align:center;
+
+			    /* W3C */
+			    display:box;
+			    box-pack:center;
+			    box-align:center;
+				z-index: 1000;
+				color: white;
+				background: #7f6215;
+				
+			}
+			#highscores table tr#head td{font-size:24px; color:#FFD700;}
+			#highscores table tr td {font-size:12px;}
+			#highscores button {
+				width: 100px; 
+				height: 30px;
+				display: block;
+				margin: 0 auto;
+				margin-top: 10px;
+				background: url(images/button.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				color: #fff;
+				font-weight: 800;
+			}
+
+			#howToPlay {
+				visibility: visible;
+				position: absolute;
+				top: -5000px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				/* Firefox */
+			    display:-moz-box;
+			    -moz-box-pack:center;
+			    -moz-box-align:center;
+
+			    /* Safari and Chrome */
+			    display:-webkit-box;
+			    -webkit-box-pack:center;
+			    -webkit-box-align:center;
+
+			    /* W3C */
+			    display:box;
+			    box-pack:center;
+			    box-align:center;
+				z-index: 503;
+				background: url(images/alert.png);
+				background-size: 100% 100%;
+				width: 330px;
+				height: 270px;
+				color: white;
+				padding-left: 100px;
+				padding-right: 50px;
+				text-align: left;
+				
+			}
+
+			#howToPlay button {
+				width: 100px; 
+				height: 30px;
+				display: block;
+				margin-top: 10px;
+				background: url(images/button.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				color: #fff;
+				font-weight: 800;
+			}
